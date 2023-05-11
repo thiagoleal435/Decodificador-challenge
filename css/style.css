@@ -1,123 +1,155 @@
 body {
-    position: relative;
-    width: 1440px;
+    background: rgba(243, 245, 252, 1);
+    font-family: 'Inter', sans-serif;
+}
+
+main {
     height: 1024px;
-    background: #F3F5FC;
+    margin-top: 40px;
 }
 
-.icon {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 40px;
-    position: absolute;
-    width: 120px;
+article {
+    float: left;
+    width: 60%;
+    height: auto;
+}
+
+.icone-alura {
+    display: block;
+    width: 32px;
     height: 48px;
-    left: 40px;
-    top: 40px;
+    margin: 0 0 0 80px;
 }
 
-.mostra-texto {
-    position: absolute;
-    width: 400px;
-    height: 944px;
-    left: 1000px;
-    top: 40px;
-    background: #FFFFFF;
+.texto {
+    display: block;
+    width: 70%;
+    height: 48px;
+    margin: 150px 20%;
+    font-size: 2em;
+    border: 0;
+    background: rgba(243, 245, 252, 1);
+    color: #0A3871;
+}
+
+.texto::placeholder {
+    color: #0A3871;
+}
+
+.aviso-botoes {
+    display: block;
+    margin-left: 20%;
+    margin-top: 640px;
+}
+
+.aviso {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.aviso p {
+    font-size: 14px;
+    color: #495057;
+}
+
+.botoes {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+#criptografar,
+#descriptografar {
+    font-size: 1em;
+    width: 330px;
+    height: 70px;
+    padding: 24px;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+}
+
+#criptografar {
+    color: white;
+    background-color: #0A3871;
+}
+
+#descriptografar {
+    color: #0A3871;
+    background-color: #D8DFE8;
+}
+
+aside {
+    float: right;
+    width: 30%;
+    background-color: #FFFFFF;
+    margin: 0 5%;
+    height: 1024px;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
     border-radius: 32px;
 }
 
-.abaixo-image {
+aside img {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 16px;
-    position: absolute;
-    width: 336px;
-    height: 122px;
-    left: 1032px;
-    top: 619px;
-}
-
-.image-mostra-texto {
-    position: absolute;
-    width: 336px;
-    height: 304px;
-    left: 1032px;
-    top: 283px;
-}
-
-.mensagem-aviso {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-    gap: 8px;
-    position: absolute;
-    width: 252px;
-    height: 18px;
-    left: 240px;
-    top: 851px;
-}
-
-.buttons {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 24px;
-    position: absolute;
-    width: 680px;
-    height: 67px;
-    left: 240px;
-    top: 885px;
-}
-
-.button-crip {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 24px;
-    gap: 8px;
-    width: 328px;
-    height: 67px;
-    background: #0A3871;
+    margin: 0 auto;
+    margin-top: 50%;
     border-radius: 24px;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+    width: 80%;
+    height: 30%;
 }
 
-.button-descrip {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 24px;
-    gap: 8px;
-    width: 328px;
-    height: 67px;
-    background: #D8DFE8;
-    border: 1px solid #0A3871;
-    border-radius: 24px;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
+aside h2 {
+    margin: 16px 32px;
+    font-weight: 700;
+    font-size: 1.5em;
+    line-height: 120%;
+    text-align: center;
+
 }
 
-.texto {
-    position: absolute;
-    width: 680px;
-    height: 48px;
-    left: 240px;
-    top: 168px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 150%;
-    color: #0A3871;
+aside p {
+    margin: 0 32px;
+    text-align: center;
+}
+
+footer {
+    margin-top: 40px;
+    background-color: #0A3871;
+    padding: 100px;
+}
+
+.texto-rodape {
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.texto-rodape h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.icones-rodape {
+    text-align: center;
+    color: #FFFFFF;
+    margin: 30px 0;
+}
+
+.icones-rodape a {
+    color: #D8DFE8;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.icones-rodape a:hover {
+    color: black;
+    transition: 0.5;
+}
+
+.copyright {
+    text-align: center;
+    color: #FFFFFF;
+    opacity: 0.6;
 }
