@@ -19,41 +19,45 @@
     <main>
         <article>
 
-            <h1 class="icone-alura">
-                <img src="./img/icon1.png" alt="Logo Alura">
-            </h1>
-
-            <!-- Preencher com texto digitado na página index -->
+            <div class="icone-alura">
+                <h1>
+                    <img src="./img/icon1.png" alt="Logo Alura">
+                </h1>
+            </div>
 
             <form action="resultado.html" method="POST">
-                <input type="text" class="texto" value="javascript">
+
+                <!-- Preencher com texto da pagina index -->
+
+                <div class="aviso-botoes">
+                    <div class="aviso">
+                        <img src="./img/icon2.png" alt="Aviso">
+                        <p>Apenas letras maiúsculas e sem acento.</p>
+                    </div>
+
+                    <div class="botoes">
+                        <input type="submit" id="criptografar" value="Criptografar">
+                        <input type="submit" id="descriptografar" value="Descriptografar">
+                    </div>
+                </div>
             </form>
-
-            <div class="aviso-botoes">
-                <div class="aviso">
-                    <img src="./img/icon2.png" alt="Aviso">
-                    <p>Apenas letras maiúsculas e sem acento.</p>
-                </div>
-
-                <div class="botoes">
-                    <input type="submit" id="criptografar" value="Criptografar">
-                    <input type="submit" id="descriptografar" value="Descriptografar">
-                </div>
-            </div>
 
         </article>
 
         <aside>
+            <div class="caixa-direita">
 
-            <!-- Prencher com resultado do texto criptografado ou descriptografado -->
+                <!-- Preencher com texto criptogrado ou descriptografado -->
 
-            <div class="copiar">
-                <form action="resultado.html" method="POST">
-                    <input id="copiar" type="submit" value="copiar">
+                <form action="main.js" method="POST">
+                    <div class="botao-copiar">
+                        <input id="copiar" type="submit" value="Copiar">
+                    </div>
                 </form>
-            </div>
 
+            </div>
         </aside>
+
     </main>
 
     <footer>
