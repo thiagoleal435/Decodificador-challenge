@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
-    <title>Decodificador Challenge Alura</title>
+    <title>Challenge Decodificador - Alura ONE 5</title>
 </head>
 
 <body>
@@ -22,38 +22,39 @@
 
             <div class="icone-alura">
                 <h1>
-                    <img src="./img/icon1.png" alt="Logo Alura">
+                    <img src="./img/icon1.png" title="Logo Alura" alt="Logo Alura">
                 </h1>
             </div>
 
-            <form action="resultado.html" method="POST">
-
+            <div class="container-esquerda">
                 <div class="input-texto">
-                    <input type="text" placeholder="Digite seu texto" required>
+                    <input type="text" id="textoinput" placeholder="Digite seu texto" required>
+                </div>
+            </div>
+
+            <div class="aviso-botoes">
+                <div class="aviso">
+                    <img src="./img/icon2.png" alt="Aviso">
+                    <span>Apenas letras minúsculas e sem acento.</span>
                 </div>
 
-                <div class="aviso-botoes">
-                    <div class="aviso">
-                        <img src="./img/icon2.png" alt="Aviso">
-                        <p>Apenas letras maiúsculas e sem acento.</p>
-                    </div>
-
-                    <div class="botoes">
-                        <input type="submit" id="criptografar" value="Criptografar">
-                        <input type="submit" id="descriptografar" value="Descriptografar">
-                    </div>
+                <div class="botoes">
+                    <input type="submit" id="criptografar" value="Criptografar">
+                    <input type="submit" id="descriptografar" value="Descriptografar">
                 </div>
-            </form>
+            </div>
 
         </article>
 
-        <aside>
-            <div class="caixa-direita">
-                <img src="./img/image1.gif" alt="Esperando um texto">
-                <h2>Nenhuma mensagem encontrada</h2>
-                <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
+        <section>
+            <div class="caixa-direita-container">
+                <div class="container-direita">
+                    <img src="./img/image1.gif" alt="Esperando um texto">
+                    <h2>Nenhuma mensagem encontrada</h2>
+                    <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
+                </div>
             </div>
-        </aside>
+        </section>
 
     </main>
 
@@ -91,9 +92,11 @@
         </div>
 
         <div class="copyright">
-            @2023Copyright-METLA Softwares
+            @2023Copyright-ThiagoLealDev
         </div>
     </footer>
+
+    <script src="main.js"></script>
 
 </body>
 
