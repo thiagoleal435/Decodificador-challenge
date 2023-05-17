@@ -2,27 +2,29 @@
 // gerar texto do input no lugar do campo de texto
 // verificar se o texto é válido e não contem acentos
 
-function criptografar(textoinput) {
+function criptografar() {
+    let texto = textarea.value;
     let result = "";
-    for (let letra of textoinput) {
+
+    for (let letra of texto) {
         switch (letra) {
-            case 'a':
+            case 'a', 'A':
                 result += "ai";
                 break;
 
-            case 'e':
+            case 'e', 'E':
                 result += "enter";
                 break;
 
-            case 'i':
+            case 'i', 'I':
                 result += "imes";
                 break;
 
-            case 'o':
+            case 'o', 'O':
                 result += "ober";
                 break;
 
-            case 'u':
+            case 'u', 'U':
                 result += "ufat";
                 break;
 
@@ -31,31 +33,43 @@ function criptografar(textoinput) {
                 break;
         }
     }
-    return result;
+    // Adicionar div no paragrafo e estilizar 
+    // div.innerHTML = `<div class="container-direita-escrito"><p>${result}</p>
+    <div class="botao-copiar"><button id="copiar" onclick="copiarTexto()">Copiar</button></div></div > `;
 }
 
-function descriptografar(textoCriptografado) {
-    textoCriptografado = textoCriptografado.replaceAll("ai", "a");
-    textoCriptografado = textoCriptografado.replaceAll("enter", "e");
-    textoCriptografado = textoCriptografado.replaceAll("imes", "i");
-    textoCriptografado = textoCriptografado.replaceAll("ober", "o");
-    textoCriptografado = textoCriptografado.replaceAll("ufat", "u");
-    return textoCriptografado;
+function descriptografar(texto) {
+
+    texto = textarea.value;
+
+    texto = texto.replaceAll("ai", "a");
+    texto = texto.replaceAll("enter", "e");
+    texto = texto.replaceAll("imes", "i");
+    texto = texto.replaceAll("ober", "o");
+    texto = texto.replaceAll("ufat", "u");
+
+    div.innerHTML = `< div class="container-direita-escrito" ><p>${texto}</p>
+    <div class="botao-copiar"><button id="copiar" onclick="copiarTexto()">Copiar</button></div></div > `;
 }
 
-function copyToClipboard() {
-    let msgResult = document.getElementById("msgResult").innerText;
-    navigator.clipboard.writeText(msgResult);
+function copiarTexto() {
+    let textoP = div.querySelector("p");
+    let inputTemp = document.createElement("input");
 
-    let resultSection = document.getElementById("result");
-    let height = resultSection.getElementsByClassName("msg-result")[0].clientHeight;
+    inputTemp.value = textoP.textContent;
+    document.body.appendChild(inputTemp);
+    inputTemp.select();
+    document.execCommand("copy");
+    document.body.removeChild(inputTemp);
 
-    resultSection.innerHTML = `
-    <div class="msg-copied fade-in" style="min-height: ${height}px">
-        <h3>Mensagem copiada</h2>
-    </div>
-    `
-    showResultTimeout = setTimeout(function () {
-        showResult(msgResult);
-    }, 1500);
+    alert("Texto copiado para a área de transferência!");
 }
+
+
+let div = document.querySelector('.container-direita');
+let textarea = document.getElementById('textarea');
+let btnCrip = document.getElementById('criptografar');
+let btnDescrip = document.getElementById('descriptografar');
+
+btnCrip.onclick = criptografar;
+btnDescrip.onclick = descriptografar;
