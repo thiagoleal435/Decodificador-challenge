@@ -1,62 +1,70 @@
-// Guardar input na variavel textoinput
-// gerar texto do input no lugar do campo de texto
-// verificar se o texto é válido e não contem acentos
-
 function criptografar() {
-    let texto = textarea.value;
+    const texto = textArea.value;
+
+    if (/[^a-z\s]/.test(texto)) {
+        alert("A mensagem contém caracteres especiais ou letras maiúsculas. Por favor, remova-os antes de criptografar.");
+        return;
+    }
+
+    // function possuiLetrasMaiusculas(texto) {
+    //     var regex = /[A-Z]/;
+    //     return regex.test(texto);
+    // }
+
     let result = "";
 
-    for (let letra of texto) {
+    Array.from(texto).forEach(letra => {
+
         switch (letra) {
-            case 'a', 'A':
-                result += "ai";
+            case 'e':
+                result += 'enter';
                 break;
-
-            case 'e', 'E':
-                result += "enter";
+            case 'i':
+                result += 'imes';
                 break;
-
-            case 'i', 'I':
-                result += "imes";
+            case 'a':
+                result += 'ai';
                 break;
-
-            case 'o', 'O':
-                result += "ober";
+            case 'o':
+                result += 'ober';
                 break;
-
-            case 'u', 'U':
-                result += "ufat";
+            case 'u':
+                result += 'ufat';
                 break;
-
             default:
                 result += letra;
-                break;
         }
-    }
-    // Adicionar div no paragrafo e estilizar 
-    // div.innerHTML = `<div class="container-direita-escrito"><p>${result}</p>
+    });
+
+    document.querySelector('.container-direita').innerHTML = `<div class="container-direita-escrito"><div class="container-p"><textarea readonly>${result}</textarea></div>
     <div class="botao-copiar"><button id="copiar" onclick="copiarTexto()">Copiar</button></div></div > `;
+
 }
 
-function descriptografar(texto) {
+function descriptografar() {
 
-    texto = textarea.value;
+    let result = textArea.value;
 
-    texto = texto.replaceAll("ai", "a");
-    texto = texto.replaceAll("enter", "e");
-    texto = texto.replaceAll("imes", "i");
-    texto = texto.replaceAll("ober", "o");
-    texto = texto.replaceAll("ufat", "u");
+    if (/[^a-z\s]/.test(result)) {
+        alert("A mensagem contém caracteres especiais ou letras maiúsculas. Por favor, remova-os antes de descriptografar.");
+        return;
+    }
 
-    div.innerHTML = `< div class="container-direita-escrito" ><p>${texto}</p>
+    result = result.replace(/ai/g, "a");
+    result = result.replace(/enter/g, "e");
+    result = result.replace(/imes/g, "i");
+    result = result.replace(/ober/g, "o");
+    result = result.replace(/ufat/g, "u");
+
+    document.querySelector('.container-direita').innerHTML = `<div class="container-direita-escrito"><div class="container-p"><textarea readonly>${result}</textarea></div>
     <div class="botao-copiar"><button id="copiar" onclick="copiarTexto()">Copiar</button></div></div > `;
 }
 
 function copiarTexto() {
-    let textoP = div.querySelector("p");
+    let texto = div.querySelector("textarea");
     let inputTemp = document.createElement("input");
 
-    inputTemp.value = textoP.textContent;
+    inputTemp.value = texto.textContent;
     document.body.appendChild(inputTemp);
     inputTemp.select();
     document.execCommand("copy");
@@ -65,11 +73,10 @@ function copiarTexto() {
     alert("Texto copiado para a área de transferência!");
 }
 
-
-let div = document.querySelector('.container-direita');
-let textarea = document.getElementById('textarea');
-let btnCrip = document.getElementById('criptografar');
-let btnDescrip = document.getElementById('descriptografar');
+var textArea = document.getElementById('textarea');
+var div = document.querySelector('.container-direita');
+var btnCrip = document.getElementById('criptografar');
+var btnDescrip = document.getElementById('descriptografar');
 
 btnCrip.onclick = criptografar;
 btnDescrip.onclick = descriptografar;
