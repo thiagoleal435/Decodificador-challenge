@@ -6,11 +6,6 @@ function criptografar() {
         return;
     }
 
-    // function possuiLetrasMaiusculas(texto) {
-    //     var regex = /[A-Z]/;
-    //     return regex.test(texto);
-    // }
-
     let result = "";
 
     Array.from(texto).forEach(letra => {
@@ -36,7 +31,7 @@ function criptografar() {
         }
     });
 
-    document.querySelector('.container-direita').innerHTML = `<div class="container-direita-escrito"><div class="container-p"><textarea readonly>${result}</textarea></div>
+    document.querySelector('.container-direita').innerHTML = `<div class="container-direita-escrito"><div class="container-p"><textarea id="textResult" readonly>${result}</textarea></div>
     <div class="botao-copiar"><button id="copiar" onclick="copiarTexto()">Copiar</button></div></div > `;
 
 }
@@ -56,19 +51,21 @@ function descriptografar() {
     result = result.replace(/ober/g, "o");
     result = result.replace(/ufat/g, "u");
 
-    document.querySelector('.container-direita').innerHTML = `<div class="container-direita-escrito"><div class="container-p"><textarea readonly>${result}</textarea></div>
+    document.querySelector('.container-direita').innerHTML = `<div class="container-direita-escrito"><div class="container-p"><textarea id="textResult" readonly>${result}</textarea></div>
     <div class="botao-copiar"><button id="copiar" onclick="copiarTexto()">Copiar</button></div></div > `;
 }
 
 function copiarTexto() {
-    let texto = div.querySelector("textarea");
-    let inputTemp = document.createElement("input");
 
-    inputTemp.value = texto.textContent;
-    document.body.appendChild(inputTemp);
-    inputTemp.select();
+    let textoResult = document.getElementById("textResult");
+
+    textoResult.select();
     document.execCommand("copy");
-    document.body.removeChild(inputTemp);
+
+    // inputTemp.value = textArea.textContent;
+    // document.body.appendChild(inputTemp);
+    // inputTemp.select();
+    // document.execCommand("copy");
 
     alert("Texto copiado para a área de transferência!");
 }

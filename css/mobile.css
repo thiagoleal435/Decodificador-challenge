@@ -1,4 +1,10 @@
-@media only screen and (max-width : 800px) {
+@media only screen and (max-width : 500px) {
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
     main {
         display: flex;
@@ -8,13 +14,34 @@
 
     article {
         width: 100%;
-        height: 720px;
+        height: auto;
+    }
+
+    .container-esquerda {
+        display: block;
+        width: 100%;
+        margin: 5% 0;
+    }
+
+    .campo-texto {
+        width: 100%;
     }
 
     .aviso-botoes {
         display: block;
-        width: 80%;
+        width: 90%;
         margin: 0 auto;
+    }
+
+    .botoes {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #criptografar,
+    #descriptografar {
+        width: 100%;
     }
 
     section {
@@ -23,16 +50,86 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 720px;
+        height: auto;
+        margin: 10% 0;
     }
+
 
     .caixa-direita-container {
         display: block;
         margin: 0 auto;
     }
 
-    .container-p {
-        padding: 5% 5% 0 5%;
-        height: 80%;
+    .container-direita {
+        margin: 10% 0;
     }
+
+    .container-direita img {
+        display: none;
+    }
+
+    .container-p {
+        padding: 0 5%;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    article {
+        width: 100%;
+        height: auto;
+    }
+
+    .container-esquerda {
+        display: block;
+        width: 100%;
+    }
+
+    .campo-texto {
+        width: 100%;
+        margin: 10% 0;
+    }
+
+    .aviso-botoes {
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    section {
+        margin: 10% 0;
+    }
+
+    .container-direita {
+        margin: 5% 0;
+    }
+
+    .container-direita img {
+        display: none;
+    }
+
+    .container-p {
+        padding: 0 5%;
+        height: auto;
+        margin-bottom: 10%;
+    }
+
+    #textResult {
+        width: 100%;
+        padding: 0;
+    }
+
 }
