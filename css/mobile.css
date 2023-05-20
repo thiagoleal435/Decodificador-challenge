@@ -1,66 +1,29 @@
 @media only screen and (max-width : 500px) {
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
     main {
-        display: flex;
         flex-direction: column;
-        height: auto;
     }
 
     article {
         width: 100%;
-        height: auto;
     }
 
     .container-esquerda {
-        display: block;
         width: 100%;
-        margin: 5% 0;
-    }
-
-    .campo-texto {
-        width: 100%;
+        padding: 0;
     }
 
     .aviso-botoes {
-        display: block;
-        width: 90%;
-        margin: 0 auto;
+        padding: 0;
     }
 
     .botoes {
-        display: flex;
         flex-direction: column;
-        width: 100%;
-    }
-
-    #criptografar,
-    #descriptografar {
         width: 100%;
     }
 
     section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         width: 100%;
-        height: auto;
-        margin: 10% 0;
-    }
-
-
-    .caixa-direita-container {
-        display: block;
-        margin: 0 auto;
-    }
-
-    .container-direita {
         margin: 10% 0;
     }
 
@@ -76,26 +39,16 @@
 
 @media only screen and (max-width: 950px) {
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
     main {
-        display: flex;
         flex-direction: column;
-        height: auto;
     }
 
     article {
         width: 100%;
-        height: auto;
     }
 
     .container-esquerda {
-        display: block;
-        width: 100%;
+        padding: 0;
     }
 
     .campo-texto {
@@ -104,12 +57,12 @@
     }
 
     .aviso-botoes {
-        display: block;
-        width: 90%;
         margin: 0 auto;
+        padding: 0;
     }
 
     section {
+        width: 100%;
         margin: 10% 0;
     }
 
@@ -127,8 +80,11 @@
         margin-bottom: 10%;
     }
 
+    .botao-copiar {
+        margin: 0 5%;
+    }
+
     #textResult {
-        width: 100%;
         padding: 0;
     }
 
