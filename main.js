@@ -31,7 +31,7 @@ function criptografar() {
         }
     });
 
-    document.querySelector('.container-direita').innerHTML = `<div class="container-direita-escrito"><div class="container-p"><textarea id="textResult" readonly>${result}</textarea></div>
+    document.querySelector('.container-direita').innerHTML = `<div class="container-direita-escrito"><div class="container-p"><p id="textResult">${result}</p></div>
     <div class="botao-copiar"><button id="copiar" onclick="copiarTexto()">Copiar</button></div></div > `;
 
 }
@@ -51,7 +51,7 @@ function descriptografar() {
     result = result.replace(/ober/g, "o");
     result = result.replace(/ufat/g, "u");
 
-    document.querySelector('.container-direita').innerHTML = `<div class="container-direita-escrito"><div class="container-p"><textarea id="textResult" readonly>${result}</textarea></div>
+    document.querySelector('.container-direita').innerHTML = `<div class="container-direita-escrito"><div class="container-p"><p id="textResult">${result}</p></div>
     <div class="botao-copiar"><button id="copiar" onclick="copiarTexto()">Copiar</button></div></div > `;
 }
 
@@ -59,13 +59,11 @@ function copiarTexto() {
 
     let textoResult = document.getElementById("textResult");
 
-    textoResult.select();
+    inputTemp = document.createElement('textarea');
+    inputTemp.value = textoResult.textContent;
+    document.body.appendChild(inputTemp);
+    inputTemp.select();
     document.execCommand("copy");
-
-    // inputTemp.value = textArea.textContent;
-    // document.body.appendChild(inputTemp);
-    // inputTemp.select();
-    // document.execCommand("copy");
 
     alert("Texto copiado para a área de transferência!");
 }
